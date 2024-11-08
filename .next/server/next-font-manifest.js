@@ -1,0 +1,1 @@
+self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/Users/dmytromedvediev/Documents/GitHub/Education projects/NextPizza/app/layout\":[\"static/media/8a9e72331fecd08b-s.p.woff2\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"
