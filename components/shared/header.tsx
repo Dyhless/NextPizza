@@ -14,7 +14,7 @@ export const Header: React.FC<Props> = ({ className }) => {
             
             {/*Left side*/}
             <div>
-               {/* <Image src="logo.png" alt="Logo" width={32} height={3,2} />*/}
+               {/* <Image src="logo.png" alt="Logo" width={32} height={3,2}  />*/}
             </div>
          </Container>
       </header>
