@@ -1,4 +1,5 @@
 import { Container, Filters, Title, TopBar } from "@/components/shared";
+import { ProductsGroupList } from "@/components/shared/products-group-list";
 
 export default function Home() {
   return (
@@ -18,9 +19,87 @@ export default function Home() {
           {/* List of produts */}
           <div className="flex-1">
             <div className="flex flex-col gap-16">
-              List of produts
-              {/* <ProductGroupList title="Pizzas" items={[1, 2, 3, 4, 5]} />
-              <ProductGroupList title="Combos" items={[1, 2, 3, 4, 5]} /> */}
+              <ProductsGroupList title="Pizzas" items={[{
+                  id: 1,
+                  name: 'Cheese-pizza',
+                  imageUrl: 'https://media.dodostatic.com/image/r:292x292/11EF692558852DA2A0842597E6E57057.avif',
+                  price: 50,
+                  items: [{ price: 50 }],
+              },
+                {
+                  id: 2,
+                  name: 'Cheese-pizza',
+                  imageUrl: 'https://media.dodostatic.com/image/r:292x292/11EF692558852DA2A0842597E6E57057.avif',
+                  price: 50,
+                  items: [{ price: 50 }],
+              },{
+                  id: 3,
+                  name: 'Cheese-pizza',
+                  imageUrl: 'https://media.dodostatic.com/image/r:292x292/11EF692558852DA2A0842597E6E57057.avif',
+                  price: 50,
+                  items: [{ price: 50 }],
+              },{
+                  id: 4,
+                  name: 'Cheese-pizza',
+                  imageUrl: 'https://media.dodostatic.com/image/r:292x292/11EF692558852DA2A0842597E6E57057.avif',
+                  price: 50,
+                  items: [{ price: 50 }],
+              },{
+                  id: 5,
+                  name: 'Cheese-pizza',
+                  imageUrl: 'https://media.dodostatic.com/image/r:292x292/11EF692558852DA2A0842597E6E57057.avif',
+                  price: 50,
+                  items: [{ price: 50 }],
+              },{
+                  id: 6,
+                  name: 'Cheese-pizza',
+                  imageUrl: 'https://media.dodostatic.com/image/r:292x292/11EF692558852DA2A0842597E6E57057.avif',
+                  price: 50,
+                  items: [{ price: 50 }],
+              }
+              ]} categoryId={1} />
+
+              <ProductsGroupList title="Snakes" items={[{
+                  id: 1,
+                  name: 'Cheese-pizza',
+                  imageUrl: 'https://media.dodostatic.com/image/r:292x292/11EF692558852DA2A0842597E6E57057.avif',
+                  price: 50,
+                  items: [{ price: 50 }],
+              },
+                {
+                  id: 2,
+                  name: 'Cheese-pizza',
+                  imageUrl: 'https://media.dodostatic.com/image/r:292x292/11EF692558852DA2A0842597E6E57057.avif',
+                  price: 50,
+                  items: [{ price: 50 }],
+              },{
+                  id: 3,
+                  name: 'Cheese-pizza',
+                  imageUrl: 'https://media.dodostatic.com/image/r:292x292/11EF692558852DA2A0842597E6E57057.avif',
+                  price: 50,
+                  items: [{ price: 50 }],
+              },{
+                  id: 4,
+                  name: 'Cheese-pizza',
+                  imageUrl: 'https://media.dodostatic.com/image/r:292x292/11EF692558852DA2A0842597E6E57057.avif',
+                  price: 50,
+                  items: [{ price: 50 }],
+              },{
+                  id: 5,
+                  name: 'Cheese-pizza',
+                  imageUrl: 'https://media.dodostatic.com/image/r:292x292/11EF692558852DA2A0842597E6E57057.avif',
+                  price: 50,
+                  items: [{ price: 50 }],
+              },{
+                  id: 6,
+                  name: 'Cheese-pizza',
+                  imageUrl: 'https://media.dodostatic.com/image/r:292x292/11EF692558852DA2A0842597E6E57057.avif',
+                  price: 50,
+                  items: [{ price: 50 }],
+              }
+              ]} categoryId={2} />
+
+            
             </div>
           </div>
         </div>
