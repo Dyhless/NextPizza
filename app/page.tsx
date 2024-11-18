@@ -19,7 +19,10 @@ export default function Home() {
           {/* List of produts */}
           <div className="flex-1">
             <div className="flex flex-col gap-16">
-              <ProductsGroupList title="Pizzas" items={[{
+              <ProductsGroupList
+                title="Pizzas"
+                categoryId={1}
+                items={[{
                   id: 1,
                   name: 'Cheese-pizza',
                   imageUrl: 'https://media.dodostatic.com/image/r:292x292/11EF692558852DA2A0842597E6E57057.avif',
@@ -57,9 +60,12 @@ export default function Home() {
                   price: 50,
                   items: [{ price: 50 }],
               }
-              ]} categoryId={1} />
+              ]} />
 
-              <ProductsGroupList title="Snakes" items={[{
+              <ProductsGroupList
+                title="Combos"
+                categoryId={2}
+                items={[{
                   id: 1,
                   name: 'Cheese-pizza',
                   imageUrl: 'https://media.dodostatic.com/image/r:292x292/11EF692558852DA2A0842597E6E57057.avif',
@@ -97,7 +103,7 @@ export default function Home() {
                   price: 50,
                   items: [{ price: 50 }],
               }
-              ]} categoryId={2} />
+              ]} />
 
             
             </div>
