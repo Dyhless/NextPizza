@@ -385,7 +385,7 @@
   --tw-contain-paint:  ;
   --tw-contain-style:  ;
 }/*
-! tailwindcss v3.4.14 | MIT License | https://tailwindcss.com
+! tailwindcss v3.4.15 | MIT License | https://tailwindcss.com
 *//*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
 2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
@@ -1213,7 +1213,7 @@ video {
 }
 .border-gray-100 {
   --tw-border-opacity: 1;
-  border-color: rgb(243 244 246 / var(--tw-border-opacity));
+  border-color: rgb(243 244 246 / var(--tw-border-opacity, 1));
 }
 .border-input {
   border-color: hsl(var(--input));
@@ -1226,12 +1226,12 @@ video {
 }
 .border-y-neutral-100 {
   --tw-border-opacity: 1;
-  border-top-color: rgb(245 245 245 / var(--tw-border-opacity));
-  border-bottom-color: rgb(245 245 245 / var(--tw-border-opacity));
+  border-top-color: rgb(245 245 245 / var(--tw-border-opacity, 1));
+  border-bottom-color: rgb(245 245 245 / var(--tw-border-opacity, 1));
 }
 .border-t-neutral-100 {
   --tw-border-opacity: 1;
-  border-top-color: rgb(245 245 245 / var(--tw-border-opacity));
+  border-top-color: rgb(245 245 245 / var(--tw-border-opacity, 1));
 }
 .bg-background {
   background-color: hsl(var(--background));
@@ -1244,11 +1244,11 @@ video {
 }
 .bg-gray-100 {
   --tw-bg-opacity: 1;
-  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1));
 }
 .bg-gray-50 {
   --tw-bg-opacity: 1;
-  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity, 1));
 }
 .bg-muted {
   background-color: hsl(var(--muted));
@@ -1270,7 +1270,7 @@ video {
 }
 .bg-white {
   --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
 .bg-white\/30 {
   background-color: rgb(255 255 255 / 0.3);
@@ -1407,7 +1407,7 @@ video {
 }
 .text-gray-400 {
   --tw-text-opacity: 1;
-  color: rgb(156 163 175 / var(--tw-text-opacity));
+  color: rgb(156 163 175 / var(--tw-text-opacity, 1));
 }
 .text-muted-foreground {
   color: hsl(var(--muted-foreground));
