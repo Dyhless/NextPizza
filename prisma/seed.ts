@@ -52,7 +52,7 @@ async function up() {
    //          size: 20,
    //       })
    //    ],
-   // });
+   // });...
 }
 
 async function  down() {
