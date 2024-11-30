@@ -852,6 +852,12 @@ video {
   white-space: nowrap;
   border-width: 0;
 }
+.visible {
+  visibility: visible;
+}
+.invisible {
+  visibility: hidden;
+}
 .fixed {
   position: fixed;
 }
@@ -895,15 +901,40 @@ video {
 .top-\[50\%\] {
   top: 50%;
 }
+.left-3 {
+  left: 0.75rem;
+}
+.top-1\/2 {
+  top: 50%;
+}
+.left-0 {
+  left: 0px;
+}
+.right-0 {
+  right: 0px;
+}
+.top-12 {
+  top: 3rem;
+}
+.top-14 {
+  top: 3.5rem;
+}
 .z-10 {
   z-index: 10;
 }
 .z-50 {
   z-index: 50;
 }
+.z-30 {
+  z-index: 30;
+}
 .-mx-1 {
   margin-left: -0.25rem;
   margin-right: -0.25rem;
+}
+.mx-10 {
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
 }
 .mx-3 {
   margin-left: 0.75rem;
@@ -1013,6 +1044,9 @@ video {
 .h-px {
   height: 1px;
 }
+.h-8 {
+  height: 2rem;
+}
 .max-h-96 {
   max-height: 24rem;
 }
@@ -1054,6 +1088,9 @@ video {
 }
 .w-full {
   width: 100%;
+}
+.w-8 {
+  width: 2rem;
 }
 .min-w-\[8rem\] {
   min-width: 8rem;
@@ -1188,6 +1225,9 @@ video {
 .rounded-sm {
   border-radius: calc(var(--radius) - 4px);
 }
+.rounded-xl {
+  border-radius: 0.75rem;
+}
 .rounded-t-\[10px\] {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
@@ -1275,6 +1315,9 @@ video {
 .bg-white\/30 {
   background-color: rgb(255 255 255 / 0.3);
 }
+.bg-black\/50 {
+  background-color: rgb(0 0 0 / 0.5);
+}
 .p-1 {
   padding: 0.25rem;
 }
@@ -1335,6 +1378,9 @@ video {
 }
 .pr-2 {
   padding-right: 0.5rem;
+}
+.pl-11 {
+  padding-left: 2.75rem;
 }
 .text-center {
   text-align: center;
@@ -1433,6 +1479,9 @@ video {
 .opacity-70 {
   opacity: 0.7;
 }
+.opacity-100 {
+  opacity: 1;
+}
 .shadow {
   --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
@@ -1481,6 +1530,11 @@ video {
 }
 .transition-opacity {
   transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.transition-all {
+  transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -1582,6 +1636,10 @@ html {
 
 .hover\:bg-secondary\/50:hover {
   background-color: hsl(var(--secondary) / 0.5);
+}
+
+.hover\:bg-primary\/10:hover {
+  background-color: hsl(var(--primary) / 0.1);
 }
 
 .hover\:text-secondary-foreground:hover {
