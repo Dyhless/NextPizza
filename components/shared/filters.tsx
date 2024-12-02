@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react';
 import { Title } from './title';
 import { FilterCheckbox } from '@/components/shared/filter-checkbox';
@@ -10,6 +12,10 @@ interface Props {
 }
 
 export const Filters: React.FC<Props> = ({ className }) => {
+  const { ingredients } = useFilterIngredients();
+
+  const items = ingredients.map((item) => ({ value: item.id, text: item.name }));
+
   return (
     <div className={className}>
       <Title text="Filtering" size="sm" className="mb-5 font-bold" />
@@ -32,83 +38,13 @@ export const Filters: React.FC<Props> = ({ className }) => {
         className="mt-5"
         title="Format"
         limit={6}
-        defaultItems={[
-          {
-            text: 'Cheese Sauce',
-            value: '1',
-          },
-          {
-            text: 'Mozzarella',
-            value: '2',
-          },
-          {
-            text: 'Garlic',
-            value: '3',
-          },
-          {
-            text: 'Pickles',
-            value: '4',
-          },
-          {
-            text: 'Red Onion',
-            value: '5',
-          },
-          {
-            text: 'Tomatoes',
-            value: '6',
-          },
-        ]}
-        items={[
-          {
-            text: 'Cheese Sauce',
-            value: '1',
-          },
-          {
-            text: 'Mozzarella',
-            value: '2',
-          },
-          {
-            text: 'Garlic',
-            value: '3',
-          },
-          {
-            text: 'Pickles',
-            value: '4',
-          },
-          {
-            text: 'Red Onion',
-            value: '5',
-          },
-          {
-            text: 'Tomatoes',
-            value: '6',
-          },
-          {
-            text: 'Cheese Sauce',
-            value: '1',
-          },
-          {
-            text: 'Mozzarella',
-            value: '2',
-          },
-          {
-            text: 'Garlic',
-            value: '3',
-          },
-          {
-            text: 'Pickles',
-            value: '4',
-          },
-          {
-            text: 'Red Onion',
-            value: '5',
-          },
-          {
-            text: 'Tomatoes',
-            value: '6',
-          },
-        ]}
+        defaultItems={items.slice(0, 6)}
+        items={items}
       />
     </div>
   );
 };
+
+function useFilterIngredients() {
+  throw new Error('Function not implemented.');
+}

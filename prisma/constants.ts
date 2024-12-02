@@ -16,7 +16,7 @@ export const categories = [
   },
 ];
 
-export const _ingredients = [
+export const ingredients = [
   {
     name: 'Cheese-stuffed crust',
     price: 3,
