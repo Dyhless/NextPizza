@@ -4,6 +4,7 @@ import React from 'react';
 import { Title } from './title';
 import { FilterCheckbox } from '@/components/shared/filter-checkbox';
 import { Input } from '../ui';
+
 import { RangeSlider } from './range-slide';
 import { CheckboxFiltersGroup } from './checkbox-filters-group';
 
