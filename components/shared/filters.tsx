@@ -7,15 +7,16 @@ import { Input } from '../ui';
 
 import { RangeSlider } from './range-slide';
 import { CheckboxFiltersGroup } from './checkbox-filters-group';
+import { useIngredients } from '@/components/shared/hooks/useFilterIngredients';
 
 interface Props {
    className?: string;
 }
 
 export const Filters: React.FC<Props> = ({ className }) => {
-  const { ingredients } = useFilterIngredients();
+  const { ingredients, loading, onAddId, selectedIds } = useIngredients();
 
-  const items = ingredients.map((item) => ({ value: item.id, text: item.name }));
+  const items = ingredients.map((item: { id: any; name: any; }) => ({ value: String(item.id), text: item.name }));
 
   return (
     <div className={className}>
@@ -41,11 +42,11 @@ export const Filters: React.FC<Props> = ({ className }) => {
         limit={6}
         defaultItems={items.slice(0, 6)}
         items={items}
+        loading={loading}
+        onClickCheckbox={onAddId}
+        selected={selectedIds}
       />
     </div>
   );
 };
 
-function useFilterIngredients() {
-  throw new Error('Function not implemented.');
-}
