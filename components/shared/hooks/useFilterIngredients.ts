@@ -6,7 +6,7 @@ import { useSet } from 'react-use';
 interface ReturnProps {
   ingredients: Ingredient[];
   loading: boolean;
-  selectedIds: Set<string>;
+  selectedIngredients: Set<string>;
   onAddId: (id: string) => void;
 }
 
@@ -32,9 +32,5 @@ export const useIngredients = () => {
     fetchIngredients();
   }, []);
 
-  return {
-    ingredients,
-    loading,
-    onAddId: toggle, selectedIds
-  };
+  return { ingredients, loading, onAddId: toggle, selectedIngredients: selectedIds };
 };

@@ -27,7 +27,7 @@ export const ProductCard: React.FC<Props> = ({ id, name, price, imageUrl, classN
 
            <div className="flex justify-between items-center mt-4">
                <span className="text-[20px]">
-                 от <b>{price} zl.</b>
+                 от <b>{price} zł</b>
                </span>
                <Button variant="secondary" className="text-base font-bold">
                  <Plus size={20} className="mr-1" />

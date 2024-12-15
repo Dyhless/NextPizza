@@ -9,6 +9,7 @@ import { RangeSlider } from './range-slide';
 import { CheckboxFiltersGroup } from './checkbox-filters-group';
 import { useIngredients } from '@/components/shared/hooks/useFilterIngredients';
 import { useSet } from 'react-use';
+import qs from 'qs'
 
 interface Props {
    className?: string;
@@ -20,9 +21,10 @@ interface PriceProps {
 }
 
 export const Filters: React.FC<Props> = ({ className }) => {
-  const { ingredients, loading, onAddId, selectedIds } = useIngredients();
+  const { ingredients, loading, onAddId, selectedIngredients } = useIngredients();
 
   const [sizes, { toggle: toggleSizes }] = useSet(new Set<string>([]));
+  const [pizzaTypes, { toggle: togglePizzaTypes }] = useSet(new Set<string>([]));
 
   const [prices, setPrice] = React.useState<PriceProps>({ priceFrom: 0, priceTo: 200 });
 
@@ -35,9 +37,32 @@ export const Filters: React.FC<Props> = ({ className }) => {
     })
   } 
 
+  React.useEffect(() => {
+    const filters = {
+      ...prices,
+      pizzaTypes: Array.from(pizzaTypes),
+      sizes: Array.from(sizes),
+      ingredients: Array.from(selectedIngredients),
+    }
+    
+    console.log(qs.stringify(filters));
+  }, [prices, pizzaTypes, sizes, selectedIngredients]);
+
   return (
     <div className={className}>
       <Title text="Filtering" size="sm" className="mb-5 font-bold" />
+
+      <CheckboxFiltersGroup
+        title="Type of test"
+        name="pizzaTypes"
+        className="mb-5"
+        onClickCheckbox={togglePizzaTypes}
+        selected={pizzaTypes}
+        items={[
+          { text: 'Thin', value: '1' },
+          { text: 'Traditional', value: '2' },
+        ]}
+      />
 
       <CheckboxFiltersGroup
         title="Sizes"
@@ -86,7 +111,7 @@ export const Filters: React.FC<Props> = ({ className }) => {
         items={items}
         loading={loading}
         onClickCheckbox={onAddId}
-        selected={selectedIds}
+        selected={selectedIngredients}
       />
     </div>
   );
