@@ -1,7 +1,19 @@
 import { Container, Filters, Title, TopBar } from "@/components/shared";
 import { ProductsGroupList } from "@/components/shared/products-group-list";
+import { prisma } from "@/prisma/prisma-client";
 
-export default function Home() {
+export default async function Home() {
+  const categories = await prisma.category.findMany({
+    include: {
+      products: {
+        include: {
+          ingredients: true,
+          items: true,
+        },
+      },
+    },
+  });
+
   return (
     <>
       <Container className="mt-10">
@@ -19,93 +31,17 @@ export default function Home() {
           {/* List of produts */}
           <div className="flex-1">
             <div className="flex flex-col gap-16">
-              <ProductsGroupList
-                title="Pizzas"
-                categoryId={1}
-                items={[{
-                  id: 1,
-                  name: 'Cheese-pizza',
-                  imageUrl: 'https://media.dodostatic.com/image/r:292x292/11EF692558852DA2A0842597E6E57057.avif',
-                  price: 50,
-                  items: [{ price: 50 }],
-              },
-                {
-                  id: 2,
-                  name: 'Cheese-pizza',
-                  imageUrl: 'https://media.dodostatic.com/image/r:292x292/11EF692558852DA2A0842597E6E57057.avif',
-                  price: 50,
-                  items: [{ price: 50 }],
-              },{
-                  id: 3,
-                  name: 'Cheese-pizza',
-                  imageUrl: 'https://media.dodostatic.com/image/r:292x292/11EF692558852DA2A0842597E6E57057.avif',
-                  price: 50,
-                  items: [{ price: 50 }],
-              },{
-                  id: 4,
-                  name: 'Cheese-pizza',
-                  imageUrl: 'https://media.dodostatic.com/image/r:292x292/11EF692558852DA2A0842597E6E57057.avif',
-                  price: 50,
-                  items: [{ price: 50 }],
-              },{
-                  id: 5,
-                  name: 'Cheese-pizza',
-                  imageUrl: 'https://media.dodostatic.com/image/r:292x292/11EF692558852DA2A0842597E6E57057.avif',
-                  price: 50,
-                  items: [{ price: 50 }],
-              },{
-                  id: 6,
-                  name: 'Cheese-pizza',
-                  imageUrl: 'https://media.dodostatic.com/image/r:292x292/11EF692558852DA2A0842597E6E57057.avif',
-                  price: 50,
-                  items: [{ price: 50 }],
-              }
-              ]} />
-
-              <ProductsGroupList
-                title="Combos"
-                categoryId={2}
-                items={[{
-                  id: 1,
-                  name: 'Cheese-pizza',
-                  imageUrl: 'https://media.dodostatic.com/image/r:292x292/11EF692558852DA2A0842597E6E57057.avif',
-                  price: 50,
-                  items: [{ price: 50 }],
-              },
-                {
-                  id: 2,
-                  name: 'Cheese-pizza',
-                  imageUrl: 'https://media.dodostatic.com/image/r:292x292/11EF692558852DA2A0842597E6E57057.avif',
-                  price: 50,
-                  items: [{ price: 50 }],
-              },{
-                  id: 3,
-                  name: 'Cheese-pizza',
-                  imageUrl: 'https://media.dodostatic.com/image/r:292x292/11EF692558852DA2A0842597E6E57057.avif',
-                  price: 50,
-                  items: [{ price: 50 }],
-              },{
-                  id: 4,
-                  name: 'Cheese-pizza',
-                  imageUrl: 'https://media.dodostatic.com/image/r:292x292/11EF692558852DA2A0842597E6E57057.avif',
-                  price: 50,
-                  items: [{ price: 50 }],
-              },{
-                  id: 5,
-                  name: 'Cheese-pizza',
-                  imageUrl: 'https://media.dodostatic.com/image/r:292x292/11EF692558852DA2A0842597E6E57057.avif',
-                  price: 50,
-                  items: [{ price: 50 }],
-              },{
-                  id: 6,
-                  name: 'Cheese-pizza',
-                  imageUrl: 'https://media.dodostatic.com/image/r:292x292/11EF692558852DA2A0842597E6E57057.avif',
-                  price: 50,
-                  items: [{ price: 50 }],
-              }
-              ]} />
-
-            
+              {categories.map(
+                  (category) =>
+                    category.products.length > 0 && (
+                      <ProductsGroupList
+                        key={category.id}
+                        title={category.name}
+                        categoryId={category.id}
+                        items={category.products}
+                      />
+                    ),
+              )}  
             </div>
           </div>
         </div>
